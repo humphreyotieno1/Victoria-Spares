@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
+:root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -84,29 +83,28 @@
   }
 @layer base {
   * {
-    border-color: hsl(var(--border));
+    @apply border-border;
   }
+
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    @apply min-h-screen bg-background text-foreground antialiased;
   }
 }
-}
 
+@layer components {
+  .product-card {
+    @apply relative overflow-hidden rounded-lg border bg-card transition-all duration-300;
+  }
 
-.product-card {
-  transition-property: all;
-  transition-duration: 300ms;
-}
+  .product-card:hover {
+    @apply -translate-y-0.5 shadow-lg;
+  }
 
-.product-card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
+  .product-card-image {
+    @apply aspect-square w-full object-contain p-4 transition-all duration-300;
+  }
 
-.product-card-image {
-  @apply aspect-square w-full object-cover transition-transform duration-300;
-}
-
-.product-card:hover .product-card-image {
-  @apply scale-105;
+  .product-card:hover .product-card-image {
+    @apply scale-105;
+  }
 }
