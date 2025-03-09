@@ -23,7 +23,7 @@ export default function HeroSection() {
             }}
           >
             <h1 className="mb-6 text-4xl font-bold tracking-tighter md:text-5xl lg:text-6xl xl:text-7xl">
-              Quality Spare Parts for Your Vehicle
+              Quality Spare Parts for Your Automobile
             </h1>
             <p className="mb-8 max-w-lg text-lg text-muted-foreground">
               Find genuine and high-quality spare parts for all makes and models. Fast shipping and competitive prices
